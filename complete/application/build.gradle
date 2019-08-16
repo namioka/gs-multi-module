@@ -21,14 +21,14 @@ apply plugin: 'org.springframework.boot'
 //
 //repositories { mavenCentral() }
 
-//// https://docs.spring.io/spring-boot/docs/current/reference/html/using-boot-devtools.html
-//// https://bsblog.casareal.co.jp/archives/2953
-//configurations {
-//    developmentOnly
-//    runtimeClasspath {
-//        extendsFrom developmentOnly
-//    }
-//}
+// https://docs.spring.io/spring-boot/docs/current/reference/html/using-boot-devtools.html
+// https://bsblog.casareal.co.jp/archives/2953
+configurations {
+    developmentOnly
+    runtimeClasspath {
+        extendsFrom developmentOnly
+    }
+}
 
 dependencies {
     // https://docs.gradle.org/current/userguide/java_library_plugin.html
@@ -41,7 +41,7 @@ dependencies {
     implementation project(':library')
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 
-//    // https://docs.spring.io/spring-boot/docs/current/reference/html/using-boot-devtools.html
-//    // https://bsblog.casareal.co.jp/archives/2953
-//    developmentOnly 'org.springframework.boot:spring-boot-devtools'
+    // https://docs.spring.io/spring-boot/docs/current/reference/html/using-boot-devtools.html
+    // https://bsblog.casareal.co.jp/archives/2953
+    developmentOnly 'org.springframework.boot:spring-boot-devtools'
 }
