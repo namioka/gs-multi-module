@@ -1,0 +1,31 @@
+buildscript {
+//    repositories {
+//        mavenCentral()
+//    }
+}
+
+plugins {
+    // https://docs.spring.io/spring-boot/docs/current/gradle-plugin/reference/html/
+    id 'org.springframework.boot' version '2.1.7.RELEASE' apply false
+}
+
+subprojects {
+    apply plugin: "java"
+    apply plugin: "io.spring.dependency-management"
+    // https://qiita.com/opengl-8080/items/6409669dc3f8b8071af4
+    // apply plugin: 'org.springframework.boot'
+
+    repositories {
+        mavenCentral()
+    }
+
+    dependencyManagement {
+        imports {
+            // https://docs.spring.io/spring-boot/docs/current/gradle-plugin/reference/html/
+            mavenBom org.springframework.boot.gradle.plugin.SpringBootPlugin.BOM_COORDINATES
+        }
+    }
+
+    sourceCompatibility = 8
+    targetCompatibility = 8
+}
